@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/watson-developer-cloud/conversation-simple.git"
+    "url": "https://gateway.watsonplatform.net/conversation/api"
   },
   "license": "Apache-2.0",
   "dependencies": {
