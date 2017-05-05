@@ -1,431 +1,334 @@
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+html, body {
+    background: #e5e5e5;
+    font-family: 'Lato', sans-serif;
+    margin: 0px auto;
+}
+::selection{
+  background: rgba(82,179,217,0.3);
+  color: inherit;
+}
+a{
+  color: rgba(82,179,217,0.9);
 }
 
-body {
-  font-family: Helvetica Neue for IBM, Helvetica Neue, Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+/* M E N U */
+
+.menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+    background: rgba(82,179,217,0.9);
+    z-index: 100;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-div {
-  word-wrap: break-word;
-  line-height: 1.25rem;
+.back {
+    position: absolute;
+    width: 90px;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    color: #fff;
+    line-height: 50px;
+    font-size: 30px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.back img {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.98);
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    margin-left: 15px;
+    }
+.back:active {
+    background: rgba(255,255,255,0.2);
+}
+.name{
+    position: absolute;
+    top: 3px;
+    left: 110px;
+    font-family: 'Lato';
+    font-size: 25px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.98);
+    cursor: default;
+}
+.last{
+    position: absolute;
+    top: 30px;
+    left: 115px;
+    font-family: 'Lato';
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    cursor: default;
 }
 
-#view-change-button {
-  display: inline-block;
-  position: absolute;
-  width: 3.125rem;
-  height: 3.125rem;
-  border-radius: 1.5625rem;
-  background: #AB72F8;
-  top: 0.3125rem;
-  right: 0.3125rem;
-  line-height: 3.125rem;
-  vertical-align: middle;
+/* M E S S A G E S */
+
+.chat {
+    list-style: none;
+    background: none;
+    margin: 0;
+    padding: 0 0 50px 0;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.chat li {
+    padding: 0.5rem;
+    overflow: hidden;
+    display: flex;
+}
+.chat .avatar {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: block;
+    z-index: 2;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    background-color: rgba(255,255,255,0.9);
+}
+.chat .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    background-color: rgba(255,255,255,0.9);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.chat .day {
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #c0c0c0;
+    height: 20px;
+    text-shadow: 7px 0px 0px #e5e5e5, 6px 0px 0px #e5e5e5, 5px 0px 0px #e5e5e5, 4px 0px 0px #e5e5e5, 3px 0px 0px #e5e5e5, 2px 0px 0px #e5e5e5, 1px 0px 0px #e5e5e5, 1px 0px 0px #e5e5e5, 0px 0px 0px #e5e5e5, -1px 0px 0px #e5e5e5, -2px 0px 0px #e5e5e5, -3px 0px 0px #e5e5e5, -4px 0px 0px #e5e5e5, -5px 0px 0px #e5e5e5, -6px 0px 0px #e5e5e5, -7px 0px 0px #e5e5e5;
+    box-shadow: inset 20px 0px 0px #e5e5e5, inset -20px 0px 0px #e5e5e5, inset 0px -2px 0px #d7d7d7;
+    line-height: 38px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-#view-change-button img {
-  display: none;
-  width: 100%;
-  height: 100%;
-  vertical-align: middle;
+.other .msg {
+    order: 1;
+    border-top-left-radius: 0px;
+    box-shadow: -1px 2px 0px #D4D4D4;
+}
+.other:before {
+    content: "";
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 40px;
+    width: 0px;
+    height: 0px;
+    border: 5px solid #fff;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
 }
 
-#view-change-button:not(.full) .not-full {
-  display: inline-block;
+.self {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.self .msg {
+    order: 1;
+    border-bottom-right-radius: 0px;
+    box-shadow: 1px 2px 0px #D4D4D4;
+}
+.self .avatar {
+    order: 2;
+}
+.self .avatar:after {
+    content: "";
+    position: relative;
+    display: inline-block;
+    bottom: 19px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    border: 5px solid #fff;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    box-shadow: 0px 2px 0px #D4D4D4;
 }
 
-#view-change-button.full .full {
-  display: inline-block;
+.msg {
+    background: white;
+    min-width: 50px;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07);
+}
+.msg p {
+    font-size: 0.8rem;
+    margin: 0 0 0.2rem 0;
+    color: #777;
+}
+.msg img {
+    position: relative;
+    display: block;
+    width: 450px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px #eee;
+    transition: all .4s cubic-bezier(0.565, -0.260, 0.255, 1.410);
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+@media screen and (max-width: 800px) {
+    .msg img {
+    width: 300px;
+}
+}
+@media screen and (max-width: 550px) {
+    .msg img {
+    width: 200px;
+}
 }
 
-#contentParent {
-  height: 100%;
+.msg time {
+    font-size: 0.7rem;
+    color: #ccc;
+    margin-top: 3px;
+    float: right;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.msg time:before{
+    content:"\f017";
+    color: #ddd;
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-right: 4px;
 }
 
-.responsive-columns-wrapper {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  -ms-display: flex;
-  -ms-flex-direction: row;
+emoji{
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -7px;
+    margin-right: 2px;
+    transform: translate3d(0px, 3px, 0px);
+}
+emoji.please{background-image: url(http://imgur.com/ftowh0s.png);}
+emoji.lmao{background-image: url(http://i.imgur.com/MllSy5N.png);}
+emoji.happy{background-image: url(http://imgur.com/5WUpcPZ.png);}
+emoji.pizza{background-image: url(http://imgur.com/voEvJld.png);}
+emoji.cryalot{background-image: url(http://i.imgur.com/UUrRRo6.png);}
+emoji.books{background-image: url(http://i.imgur.com/UjZLf1R.png);}
+emoji.moai{background-image: url(http://imgur.com/uSpaYy8.png);}
+emoji.suffocated{background-image: url(http://i.imgur.com/jfTyB5F.png);}
+emoji.scream{background-image: url(http://i.imgur.com/tOLNJgg.png);}
+emoji.hearth_blue{background-image: url(http://i.imgur.com/gR9juts.png);}
+emoji.funny{background-image: url(http://i.imgur.com/qKia58V.png);}
+
+@-webikt-keyframes pulse {
+  from { opacity: 0; }
+  to { opacity: 0.5; }
 }
 
-.responsive-column {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  overflow: auto;
+::-webkit-scrollbar {
+    min-width: 12px;
+    width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    height: 12px;
+    max-height: 12px;
+    background: #e5e5e5;
+    box-shadow: inset 0px 50px 0px rgba(82,179,217,0.9), inset 0px -52px 0px #fafafa;
 }
 
-#chat-column-holder {
-  text-align: center;
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border: none;
+    border-radius: 100px;
+    border: solid 3px #e5e5e5;
+    box-shadow: inset 0px 0px 3px #999;
 }
 
-.chat-column {
-  height: 100%;
-  padding: 0.9375rem 0 0.625rem 0;
-  margin: auto;
-  text-align: left;
-  max-width: 25rem;
-  min-width: 9.375rem;
+::-webkit-scrollbar-thumb:hover {
+    background: #b0b0b0;
+  box-shadow: inset 0px 0px 3px #888;
 }
 
-#scrollingChat {
-  margin: 0.75rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: calc(100% - 4rem);
+::-webkit-scrollbar-thumb:active {
+    background: #aaa;
+  box-shadow: inset 0px 0px 3px #7f7f7f;
 }
 
-.message-inner {
-  opacity: 0;
-  margin-top: 0.9375rem;
-  -webkit-transition-property: opacity, margin-top;
-  -webkit-transition-duration: 0.75s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-property: opacity, margin-top;
-  -moz-transition-duration: 0.75s;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-property: opacity, margin-top;
-  -o-transition-duration: 0.75s;
-  -o-transition-timing-function: ease-in;
-  -ms-transition-property: opacity, margin-top;
-  -ms-transition-duration: 0.75s;
-  -ms-transition-timing-function: ease-in;
-  transition-property: opacity, margin-top;
-  transition-duration: 0.75s;
-  transition-timing-function: ease-in;
+::-webkit-scrollbar-button {
+    display: block;
+    height: 26px;
 }
 
-.load .message-inner {
-  opacity: 1;
-  margin-top: 0.3125rem;
-}
+/* T Y P E */
 
-.from-user {
-  text-align: right;
+input.textarea {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+    background: #fafafa;
+    border: none;
+    outline: none;
+    padding-left: 55px;
+    padding-right: 55px;
+    color: #666;
+    font-weight: 400;
 }
-
-.from-user .message-inner {
-  position: relative;
-  font-size: 1rem;
-  color: #fff;
-  letter-spacing: 0.015rem;
-  line-height: 1.3125rem;
-  background: #00B4A0;
-  border-radius: 1.25rem;
-  border-bottom-right-radius: 0;
-  text-align: left;
-  display: inline-block;
-  margin-left: 2.5rem;
-  min-width: 2.5rem;
+.emojis {
+    position: fixed;
+    display: block;
+    bottom: 8px;
+    left: 7px;
+    width: 34px;
+    height: 34px;
+    background-image: url(http://i.imgur.com/5WUpcPZ.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+    cursor: pointer;
 }
-
-.from-user .message-inner p {
-  margin: 0.3125rem;
-  padding: 0 0.9375rem;
-}
-
-.from-user .message-inner:before, .from-user .message-inner:after {
-  content: "";
-  position: absolute;
-}
-
-
-.from-user .message-inner:before {
-  z-index: -2;
-  bottom: -0.375rem;
-  right: 0;
-  height: 0.375rem;
-  width: 0.5rem;
-  background: #1cb3a0;
-}
-
-.from-user .message-inner:after {
-  z-index: -1;
-  bottom: -0.5rem;
-  right: 0;
-  height: 0.5rem;
-  width: 0.5rem;
-  background: #fff;
-  border-top-right-radius: 1.25rem;
-}
-
-.from-watson .message-inner {
-  position: relative;
-  border-radius: 1.5625rem;
-  font-size: 1rem;
-  color: #B5B5B5;
-  letter-spacing: 0.015rem;
-  line-height: 1.3125rem;
-}
-
-.from-watson.latest .message-inner {
-  color: #323232;
-}
-
-.from-watson p {
-  margin: 0.3125rem;
-  padding: 0 1.25rem;
-}
-
-.from-watson.latest.top p:before {
-  content: ".";
-  color: #9855D4;
-  background-image: url("../img/marker_image.png");
-  background-size: 0.3125rem 1.3125rem;
-  position: absolute;
-  z-index: 2;
-  left: 0.4375rem;
-  width: 0.3125rem;
-  height: 1.3125rem;
-  line-height: 1.3125rem;
-}
-
-#textInput {
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 1rem;
-  color: #323232;
-  letter-spacing: 0.015rem;
-  line-height: 1.3125rem;
-  height: 2.5rem;
-  max-width: 100%;
-  padding-left: 0.125rem;
-  margin-bottom: -0.125rem;
-  font-family: Helvetica Neue for IBM, Helvetica Neue, Helvetica, Arial, sans-serif;
-
-}
-
-#textInput.underline {
-  border-bottom: 2px solid #00B4A0;
-}
-
-::-webkit-input-placeholder {
-  color: #B5B5B5;
-}
-
-::-moz-placeholder {
-  color: #B5B5B5;
-  opacity:  1;
-}
-
-input:-moz-placeholder {
-  color: #B5B5B5;
-  opacity:  1;
-}
-
-:-ms-input-placeholder {
-  color: #B5B5B5;
-}
-
-::-ms-clear {
-  display: none;
-}
-
-.inputOutline {
-  display: block;
-  border-bottom: 0.0625rem solid #aeaeae;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-#textInputDummy {
-  position:absolute;
-  white-space:pre;
-  top: 0;
-  left: -1000%;
-  opacity: 0;
-}
-
-#payload-column {
-  font-family: Monaco, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0;
-  line-height: 1.125rem;
-  background-color: #23292A;
-  color: #fff;
-  overflow-x: auto;
-
-  width: 45%;
-  max-width: 32.0625rem;
-  min-width: 29.6875rem;
-}
-
-#payload-column.full {
-  width: 100%;
-  max-width: none;
-  min-width: initial;
-}
-
-#payload-column .header-text, #payload-column #payload-initial-message {
-  font-family: Helvetica Neue for IBM, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 1.125rem;
-  color: #9E9E9E;
-  letter-spacing: 0.01875rem;
-  padding: 0.5rem;
-  padding-left: 2.5rem;
-  background: #383D3E;
-}
-
-.hide {
-  display: none;
-}
-
-.payload .line-numbers, .payload .payload-text {
-  padding: 0.5rem;
-}
-
-.line-numbers {
-  width: 2rem;
-  color: #898989;
-  text-align: right;
-}
-
-pre {
-  margin: 0;
-  word-wrap: normal;
-}
-
-.string {
-  color: #54EED0;
-}
-
-.boolean, .null, .number {
-  color: #CE8EFF;
-}
-
-.key {
-  color: #66B7FF;
-}
-
-html{
-  font-size: 16px;
-}
-
-@media only screen and (max-width: 1000px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  html {
-    font-size: 14px;
-  }
-
-  .chat-column {
-    padding-top: 4rem;
-  }
-
-  #payload-column {
-    width: 0;
-    max-width: none;
-    min-width: initial;
-  }
-}
-
-/* IBM Design fonts https://github.ibm.com/Design/fonts */
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/light/h-n-light.eot?') format('eot'),
-  url('../fonts/light/h-n-light.woff2') format('woff2'),
-  url('../fonts/light/h-n-light.woff') format('woff'),
-  url('../fonts/light/h-n-light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/light-italic/h-n-light-italic.eot?') format('eot'),
-  url('../fonts/light-italic/h-n-light-italic.woff2') format('woff2'),
-  url('../fonts/light-italic/h-n-light-italic.woff') format('woff'),
-  url('../fonts/light-italic/h-n-light-italic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/roman/h-n-roman.eot?') format('eot'),
-  url('../fonts/roman/h-n-roman.woff2') format('woff2'),
-  url('../fonts/roman/h-n-roman.woff') format('woff'),
-  url('../fonts/roman/h-n-roman.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/roman-italic/h-n-roman-italic.eot?') format('eot'),
-  url('../fonts/roman-italic/h-n-roman-italic.woff2') format('woff2'),
-  url('../fonts/roman-italic/h-n-roman-italic.woff') format('woff'),
-  url('../fonts/roman-italic/h-n-roman-italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/medium/h-n-medium.eot?') format('eot'),
-  url('../fonts/medium/h-n-medium.woff2') format('woff2'),
-  url('../fonts/medium/h-n-medium.woff') format('woff'),
-  url('../fonts/medium/h-n-medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/medium-italic/h-n-medium-italic.eot?') format('eot'),
-  url('../fonts/medium-italic/h-n-medium-italic.woff2') format('woff2'),
-  url('../fonts/medium-italic/h-n-medium-italic.woff') format('woff'),
-  url('../fonts/medium-italic/h-n-medium-italic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/bold/h-n-bold.eot?') format('eot'),
-  url('../fonts/bold/h-n-bold.woff2') format('woff2'),
-  url('../fonts/bold/h-n-bold.woff') format('woff'),
-  url('../fonts/bold/h-n-bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Helvetica Neue for IBM';
-  src: url('../fonts/bold-italic/h-n-bold-italic.eot?') format('eot'),
-  url('../fonts/bold-italic/h-n-bold-italic.woff2') format('woff2'),
-  url('../fonts/bold-italic/h-n-bold-italic.woff') format('woff'),
-  url('../fonts/bold-italic/h-n-bold-italic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
-
-/* IBM Icons */
-@font-face {
-  font-family: 'ibm-icons';
-  src:url('../fonts/ibm-icons.eot?ytcz1z') format('eot'),
-  url('../fonts/ibm-icons.eot?ytcz1z#iefix') format('embedded-opentype'),
-  url('../fonts/ibm-icons.ttf?ytcz1z') format('truetype'),
-  url('../fonts/ibm-icons.woff?ytcz1z') format('woff'),
-  url('../fonts/ibm-icons.svg?ytcz1z#ibm-icons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* IBM glyphs */
-@font-face {
-  font-family: 'ibm-glyph';
-  src:url('../fonts/ibm-glyphs.eot?1b8643') format('eot'),
-  url('../fonts/ibm-glyphs.eot?1b8643#iefix') format('embedded-opentype'),
-  url('../fonts/ibm-glyphs.ttf?1b8643') format('truetype'),
-  url('../fonts/ibm-glyphs.woff?1b8643') format('woff'),
-  url('../fonts/ibm-glyphs.svg?1b8643#ibm-glyph') format('svg');
-  font-weight: normal;
-  font-style: normal;
+.emojis:active {
+    opacity: 0.9;
 }
